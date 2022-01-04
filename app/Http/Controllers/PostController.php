@@ -77,7 +77,7 @@ eft4
     public function show($slug)
     {
         //
-        return view('blog.show')->with('post', Post::where('slug', $slug));
+        return view('blog.show')->with('post', Post::where('slug', $slug)->first());
     }
 
     /**

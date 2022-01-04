@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Auth::check())
+<div class="pt-15 w-4/5 m-auto">
+    <a href="/blog/create" class="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">Create a Post</a>
+</div>
+@endif
 @if(count($posts) > 0)
     <div class="w-4/5 m-auto text-center">
         <div class="py-15 border-b border-gray-200">
@@ -35,7 +40,7 @@
             </span>
            
             <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
-                {{ $post->article }}
+                {{ substr($post->article, 0, 100) }} ...
             </p>
             <a href="/blog/{{ $post->slug }}" class="uppercase font-extrabold py-4 text-gray-100 text-lg py-4 px-8 rounded-3xl bg-blue-500">Keep Reading</a>
         </div>

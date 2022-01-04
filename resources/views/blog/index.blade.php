@@ -44,7 +44,7 @@
             </span>
            
             <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
-                {{ $post->article }}
+                {{ substr($post->article, 0, 100) }} ...
             </p>
             <a href="/blog/{{ $post->slug }}" class="uppercase font-extrabold py-4 text-gray-100 text-lg py-4 px-8 rounded-3xl bg-blue-500">Keep Reading</a>
         </div>
