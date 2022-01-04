@@ -36,8 +36,7 @@
               <h2>Error ! <span>Page Not Found</span></h2>
             </div>
             <p>For Some Reason The Page You Requested Could Not Be Found On Our Server</p>
-            <p> <a  href="/">Go Home &raquo;</a></p>
-            <!-- ####################################################################################################### -->
+            <p> <a  href="{{ url('/') }}">Go Home &raquo;</a></p>
           </section>
       
         </div>

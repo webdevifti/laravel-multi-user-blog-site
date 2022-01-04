@@ -33,7 +33,17 @@
                             <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
                         @endif
                     @else
-                        <span>{{ Auth::user()->name }}</span>
+                    <a class="no-underline hover:underline" href="/profile"> {{ Auth::user()->name }}</a>
+                           
+                        {{-- <div class="group relative dropdown inline px-4 text-purple-500 hover:text-purple-700 cursor-pointer font-bold text-base uppercase tracking-wide">
+                           
+                            <div class="group-hover:block dropdown-menu absolute hidden h-auto">
+                                <ul class="block w-full top-0 bg-white shadow px-12">
+                                    <li class="py-1"><a class="block text-purple-500 font-bold text-base uppercase hover:text-purple-700 cursor-pointer">Porfile</a></li>
+                                    <li class="py-1"><a class="block text-purple-500 font-bold text-base uppercase hover:text-purple-700 cursor-pointer">My Posts</a></li>
+                                </ul>
+                            </div>
+                        </li> --}}
 
                         <a href="{{ route('logout') }}"
                            class="no-underline hover:underline"

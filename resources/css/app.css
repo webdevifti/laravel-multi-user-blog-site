@@ -12,3 +12,6 @@
     background-position: center center;
     height: 600px;
 }
+.dropdown:hover .dropdown-menu {
+    display: block;
+}

@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     extend: {}
   },
-  variants: {},
+  variants: {
+    display:['group-hover']
+  },
   plugins: [
     require('@tailwindcss/ui'),
   ]
