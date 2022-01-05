@@ -39,8 +39,10 @@
                     </span>
                 </div>
             @endif
-            <span class="text-gray-500 text-lg">
-                By  <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Posted at {{ date('jS M Y', strtotime($post->updated_at)) }}
+            <span class="text-gray-500 text-sm">
+                By  <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Posted at {{ date('jS M Y', strtotime($post->updated_at)) }} | 
+
+                <span class="text-sm"><i class="fa fa-comment-o"></i> {{count($post->comments)}}</span>
             </span>
            
             <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">

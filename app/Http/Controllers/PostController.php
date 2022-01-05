@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Comment;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PostController extends Controller
@@ -55,7 +56,7 @@ eft4
             'image' => 'required|mimes:jpg,png,jpeg|max:5048'
         ]);
 
-        $newImageName = uniqid().'-'.$request->title.'.'.$request->image->extension();
+        $newImageName = uniqid().'_post_thumbnail'.'.'.$request->image->extension();
         $request->image->move(public_path('images'), $newImageName);
         Post::create([
             'title' => $request->input('title'),
@@ -77,7 +78,8 @@ eft4
     public function show($slug)
     {
         //
-        return view('blog.show')->with('post', Post::where('slug', $slug)->first());
+        $comments = Comment::orderBy('id', 'DESC')->get();
+        return view('blog.show', ['comments' => $comments])->with('post', Post::where('slug', $slug)->first());
     }
 
     /**
