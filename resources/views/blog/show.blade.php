@@ -14,7 +14,7 @@
             <h1 class="text-6xl mb-5">{{ $post->title }}</h1>
             <span class="text-gray-500 text-lg">
                 By  <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Posted at {{ date('jS M Y', strtotime($post->updated_at)) }} | 
-                <span><i class="fa fa-comment-o"></i>{{ count($post->comments) }}</span>
+                <span><i class="fa fa-comment-o"></i> {{ count($post->comments) }}</span>
             </span>
            
         </div>
